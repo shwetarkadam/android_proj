@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_first_layout"
+            android:icon="@drawable/ic_if_home_126572"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_second_layout"
+            android:icon="@drawable/ic_if_ic_dashboard_48px_352300"
+            android:title="My Reviews" />
+
+        <item
+            android:id="@+id/nav_notification"
+            android:icon="@drawable/ic_if_icons_notifications_1564519"
+            android:title="Notifications" />
+        <item
+            android:id="@+id/nav_location"
+            android:icon="@drawable/ic_if_location"
+            android:title="Nearby" />
+        <item
+            android:id="@+id/nav_third_layout"
+            android:icon="@drawable/ic_if_settings_115801"
+            android:title="Settings" />
+
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+   <item
+       android:id="@+id/nav_logout"
+       android:icon="@drawable/if_logout_59175"
+       android:title="Logout"
+       />
+</menu>
