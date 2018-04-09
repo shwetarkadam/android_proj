@@ -94,7 +94,7 @@ public class Upload_Activity extends AppCompatActivity {
     }
 
     private void openImagesActivity() {
-    Intent i=new Intent(this,ImagesActivity.class);
+    Intent i=new Intent(this,ShowImagesActivity.class);
     startActivity(i);
 
 

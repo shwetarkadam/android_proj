@@ -1,12 +1,16 @@
 package com.example.hp.mccfirebase;
 
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -90,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
                                         Toast.makeText(LoginActivity.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
                                     }
                                 } else {
-                                    Intent intent = new Intent(LoginActivity.this, ResetPasswordActivity.class);
+                                    Intent intent = new Intent(LoginActivity.this, UserProfileActivity.class);
                                     startActivity(intent);
                                     finish();
                                 }
@@ -98,5 +102,5 @@ public class LoginActivity extends AppCompatActivity {
                         });
             }
         });
-    }
-}
+    }}
+

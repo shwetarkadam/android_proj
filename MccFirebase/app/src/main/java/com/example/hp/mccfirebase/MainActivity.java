@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Login in ." ,
+                Toast.makeText(MainActivity.this, "Login in " ,
                         Toast.LENGTH_SHORT).show();
 
                 Intent i=new Intent(MainActivity.this,LoginActivity.class);
@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                                 } else {
-                                    Toast.makeText(MainActivity.this, "Login in ." + task.isSuccessful(),
+                                    Toast.makeText(MainActivity.this, "Login in " + task.isSuccessful(),
                                             Toast.LENGTH_SHORT).show();
 
                                     Intent i=new Intent(MainActivity.this,LoginActivity.class);
