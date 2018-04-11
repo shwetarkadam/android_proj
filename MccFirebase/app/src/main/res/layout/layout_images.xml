@@ -1,44 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="200dp"
+
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
     android:layout_width="wrap_content"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="5dp"
-    card_view:cardCornerRadius="4dp">
-    <LinearLayout
+    >
+
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:weightSum="4">
-    <LinearLayout
+        android:layout_height="wrap_content" >
+
+    <TableRow
         android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="3.2"
-        android:orientation="vertical">
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal">
+        android:layout_height="wrap_content" >
 
 
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="130dp"
+            android:layout_height="220dp"
 
-            <TextView
-                android:id="@+id/textViewName"
-                android:layout_width="120dp"
-                android:layout_height="25dp"
-                android:text="Name"
-                android:textAlignment="center" />
+            android:adjustViewBounds="true" />
+
+
+    </TableRow>
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:text="Name"
+            android:layout_below="@id/imageView"
+            android:textAlignment="center" />
+<TextView
+    ></TextView>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+
 
             <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="120dp"
-                android:layout_height="170dp"
-                android:layout_below="@id/textViewName" />
+                android:id="@+id/imageView1"
+                android:layout_width="130dp"
+                android:layout_height="220dp"
 
-    >
-    </FrameLayout>
-    </LinearLayout></LinearLayout>
+                android:adjustViewBounds="true" />
 
 
-</android.support.v7.widget.CardView>
+
+        </TableRow>
+        <TextView
+            android:id="@+id/textViewName1"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:text="Name"
+            android:layout_below="@id/imageView1"
+            android:textAlignment="center" />
+
+    </TableLayout>
+
+</HorizontalScrollView>
+

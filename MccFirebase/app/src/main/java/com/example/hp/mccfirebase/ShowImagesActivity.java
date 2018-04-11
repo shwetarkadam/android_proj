@@ -7,8 +7,11 @@ import android.os.Bundle;
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.LinearSnapHelper;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SnapHelper;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +22,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.hp.mccfirebase.adapter.MyAdapter;
+import com.example.hp.mccfirebase.adapter.SnappyRecyclerView;
 import com.example.hp.mccfirebase.pojos.Upload;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -52,6 +56,9 @@ public class ShowImagesActivity extends AppCompatActivity {
     //list to hold all the uploaded images
     private List<Upload> uploads;
 
+    SnapHelper snapHelper = new LinearSnapHelper();
+    SnappyRecyclerView snappyRecyclerView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,10 +66,10 @@ public class ShowImagesActivity extends AppCompatActivity {
 
         // to put horizontalscroll
         //rl = findViewById(R.id.RL);
+
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
 
         progressDialog = new ProgressDialog(this);
 
@@ -83,16 +90,23 @@ public class ShowImagesActivity extends AppCompatActivity {
                 //iterating through all the values in database
                 for (DataSnapshot postSnapshot : snapshot.getChildren()) {
 
+                   /* imagesUrl.add(postSnapshot.getValue().toString());
+                    Log.i("da", imagesUrl.toString());*/
 
-
-                    Upload upload = postSnapshot.getValue(Upload.class);
+                   Upload upload = postSnapshot.getValue(Upload.class);
                     uploads.add(upload);
+
+
                 }
+
+
+
+
                 //creating adapter
                 adapter = new MyAdapter(getApplicationContext(), uploads);
 
                 //adding adapter to recyclerview
-                recyclerView.setAdapter(adapter);
+               recyclerView.setAdapter(adapter);
             }
 
             @Override

@@ -5,6 +5,7 @@ package com.example.hp.mccfirebase.adapter;
  */
 
 import android.content.Context;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.hp.mccfirebase.R;
+import com.example.hp.mccfirebase.ShowImagesActivity;
 import com.example.hp.mccfirebase.pojos.Upload;
 
 import java.util.List;
@@ -29,6 +31,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     private Context context;
     private List<Upload> uploads;
+    LayoutInflater layout_inflator;
+
 
     public MyAdapter(Context context, List<Upload> uploads) {
         this.uploads = uploads;
@@ -37,9 +41,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext())
+        //layout_inflator=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View v = layout_inflator.from(parent.getContext())
                 .inflate(R.layout.layout_images, parent, false);
         ViewHolder viewHolder = new ViewHolder(v);
+
         return viewHolder;
     }
 
@@ -50,6 +56,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.textViewName.setText(upload.getName());
 
         Glide.with(context).load(upload.getImageUrl()).into(holder.imageView);
+
+
+        holder.textViewName1.setText(upload.getName());
+
+        Glide.with(context).load(upload.getImageUrl()).into(holder.imageView1);
+
     }
 
     @Override
@@ -61,12 +73,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         public TextView textViewName;
         public ImageView imageView;
-
+        public TextView textViewName1;
+        public ImageView imageView1;
         public ViewHolder(View itemView) {
             super(itemView);
 
             textViewName = (TextView) itemView.findViewById(R.id.textViewName);
             imageView = (ImageView) itemView.findViewById(R.id.imageView);
+            textViewName1 = (TextView) itemView.findViewById(R.id.textViewName1);
+            imageView1 = (ImageView) itemView.findViewById(R.id.imageView1);
+
         }
     }
 }
