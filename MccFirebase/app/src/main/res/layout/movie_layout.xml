@@ -51,6 +51,7 @@
                 android:text="Details"
                 android:textSize="10sp"
                 android:onClick="Detail"
+                android:id="@+id/but1"
                 />
         </LinearLayout>
 

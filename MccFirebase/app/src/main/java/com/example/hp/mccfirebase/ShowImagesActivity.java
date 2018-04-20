@@ -98,10 +98,6 @@ public class ShowImagesActivity extends AppCompatActivity {
 
 
                 }
-
-
-
-
                 //creating adapter
                 adapter = new MyAdapter(getApplicationContext(), uploads);
 

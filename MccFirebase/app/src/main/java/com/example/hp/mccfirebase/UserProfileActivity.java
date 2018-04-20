@@ -201,7 +201,7 @@ public class UserProfileActivity extends AppCompatActivity
         android.app.FragmentManager fragmentManager=getFragmentManager();
 
         if (id == R.id.nav_home) {
-            Intent intent = new Intent(this, Upload_Activity.class);
+            Intent intent = new Intent(this, ShowImagesActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_my_reviews) {
             Intent intent = new Intent(this, Main2Activity.class);
@@ -215,7 +215,9 @@ public class UserProfileActivity extends AppCompatActivity
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
             finish();
-        } else if (id == R.id.nav_notification) {
+        } else if (id == R.id.nav_upload) {
+            Intent intent = new Intent(this, Upload_Activity.class);
+            startActivity(intent);
 
         }
 

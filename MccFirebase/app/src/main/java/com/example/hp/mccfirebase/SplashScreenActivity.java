@@ -5,6 +5,8 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.google.firebase.messaging.FirebaseMessaging;
+
 public class SplashScreenActivity extends AppCompatActivity {
 
     @Override
@@ -17,6 +19,9 @@ public class SplashScreenActivity extends AppCompatActivity {
             public void run() {
                 Intent i=new Intent(SplashScreenActivity.this,MainActivity.class);
                 startActivity(i);
+                MyFirebaseInstanceIDService id =new MyFirebaseInstanceIDService();
+                id.onTokenRefresh();
+                FirebaseMessaging.getInstance().subscribeToTopic("NEWS");
                 finish();
             }
         },2500);

@@ -99,16 +99,13 @@ public class Upload_Activity extends AppCompatActivity {
 
 
     }
-
-
     private void openFileChooser() {
-        Intent i=new Intent();
+        Intent i = new Intent();
         i.setType("image/*");//will see images of file choose chosen
         i.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(i,PICK_IMAGE_REQUEST);
+        startActivityForResult(i, PICK_IMAGE_REQUEST);
 
     }
-
     //will be called when we pick our file
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

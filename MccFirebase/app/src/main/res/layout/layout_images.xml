@@ -17,7 +17,6 @@
         android:layout_height="wrap_content" >
 
 
-
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="130dp"
@@ -35,6 +34,8 @@
             android:layout_below="@id/imageView"
             android:textAlignment="center" />
 <TextView
+    android:height="60dp"
+
     ></TextView>
 
         <TableRow
